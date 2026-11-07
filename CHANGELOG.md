@@ -1,5 +1,12 @@
 # Historial de cambios
 
+## 1.3.2 — 2026-11-07
+
+- Incorporado registro de tres fuentes institucionales consultadas independientemente sobre el arcoíris; no se atribuyen esas visitas a modelos de IA.
+- Confirmada y documentada la activación autenticada de las dos protecciones de correo de GitHub; sus limitaciones permanecen explícitas.
+- Añadida comprobación de autoría `noreply` al flujo de validación de `main`, que detecta problemas **después** de cada push, además de nuevas pruebas de integridad documental.
+- Conservados los 30 prompts, el historial de 52 respuestas y sus dictámenes; sin nuevas pruebas empíricas ni cambios al repositorio privado.
+
 ## 1.3.1 — 2026-11-07
 
 - Cinco respuestas reales nuevas usando los dos prompts publicados con sus variables sustituidas, en Mistral Small 4 y GPT-5.4 mini.

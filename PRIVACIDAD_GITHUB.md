@@ -18,4 +18,12 @@ El repositorio original privado mantiene su propio historial y no debe modificar
 
 ## Estado de privacidad revisado (7 de noviembre de 2026)
 
-La rama `main` accesible del repositorio público se comprobó previamente con correo `noreply` en los commits alcanzables. La configuración privada del correo a nivel de cuenta no es legible ni modificable por el conector disponible; el propietario debe comprobarla autenticado en GitHub. Los datos públicos que hayan aparecido en clones o cachés externos no se pueden borrar garantizadamente. Cada actualización mediante el conector debe verificar nuevamente la autoría del nuevo commit para no reintroducir el correo original.
+El 7 de noviembre de 2026 se revisó la sesión autenticada de la cuenta pública en GitHub. **Keep my email addresses private** estaba desactivada y se activó; **Block command line pushes that expose my email** ya estaba activada. Al recargar [GitHub Emails](https://github.com/settings/emails) se verificó que **ambas permanecieron activadas**. También se comprobaron ocho commits accesibles de `main` con correo GitHub `noreply` como autor y confirmador. No se modificaron otros repositorios ni ajustes. Esta verificación de configuración de cuenta no prueba la eliminación de copias antiguas.
+
+## Control de las futuras contribuciones
+
+- Mantener habilitadas ambas opciones de privacidad de cuenta. Su presencia debe verificarse desde la sesión autenticada, no deducirse de los commits anteriores.
+- **Antes de publicar un nuevo commit**, comprobar el correo de **autor y confirmador**. El conector de GitHub puede crear commits sin permitir escoger explícitamente su autor; la opción de privacidad de cuenta no debe suponerse suficiente para todas las integraciones.
+- La validación automatizada de GitHub Actions comprueba metadatos del nuevo `HEAD` tras un push a `main`. Es una **alarma posterior a la publicación**, **no** un bloqueo previo a que el correo quede expuesto.
+- Si se usa la API Git de manera programática, se puede crear un commit todavía **sin enlazarlo a una rama**, inspeccionar su autoría y mover la rama solo después de confirmar que ambas direcciones son `noreply`. No anunciar un cambio como publicado hasta verificar la rama.
+- No reescribir historia ni forzar publicaciones solamente para ocultar datos sin evaluar clones, etiquetas, enlaces históricos y riesgos de pérdida de trabajo.

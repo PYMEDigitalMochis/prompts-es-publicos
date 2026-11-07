@@ -147,3 +147,9 @@ Se utilizó **la sección literal «Prompt listo para copiar» publicada en v1.3
 **Dictamen de auditoría:** 3 cumplimientos y 2 casos parciales. Las respuestas que *dicen* haber leído URLs **no demuestran por sí solas** que lo hicieron; el sistema de evaluación no debe etiquetarlas como acceso verificado. La sesión sin herramienta de búsqueda ofrece evidencia suficiente del cumplimiento de la regla de transparencia para ese entorno, sin afirmar que el interruptor OFF se activó. En la explicación científica observada, el caso de arcoíris primario se describió como refracción, dispersión y reflexión interna, sin imponer reflexión interna total.
 
 **Total acumulado de respuestas observadas (versiones 1.2–1.3.1): 52.** Revisión estricta: **41 cumplen**, **6 presentan fallos materiales históricos** y **5 son parciales o insuficientemente verificadas**. Las cinco respuestas nuevas **no sustituyen ni reescriben** los 47 resultados históricos. Esta contabilidad no es un porcentaje de precisión generalizable ni una garantía sobre futuros modelos, accesos, fuentes o usos.
+
+## Control externo de fuentes — 7 de noviembre de 2026 (sin nuevas conversaciones)
+
+Se consultaron **directamente y por separado** tres páginas originales de NOAA/NWS, Met Office y NASA; sus contenidos sustentan la explicación general de refracción, dispersión y reflexión interna en el arcoíris primario. [Registro de páginas abiertas y límites](FUENTES_VERIFICADAS.md).
+
+**No cambian los 52 resultados ni sus clasificaciones históricas.** En concreto, dos respuestas que declararon navegación conservan el dictamen **parcial**, pues un chequeo independiente de la física no demuestra qué páginas visitó cada modelo. Esta acción añadió **tres comprobaciones documentales externas** y **cero** nuevas conversaciones o regresiones de modelos.

@@ -15,3 +15,16 @@ jobs:
           python-version: '3.12'
       - name: Validar enlaces, metadatos, 30 escenarios y seguridad básica
         run: python -m unittest discover -s tests -p 'validar_biblioteca.py' -v
+      - name: Detectar autoría pública no privada (control posterior al push)
+        if: github.event_name == 'push'
+        shell: bash
+        run: |
+          python - <<'PY_AUTHOR'
+          import subprocess, re, sys
+          emails = subprocess.check_output(['git','log','-1','--format=%ae%n%ce'],text=True).splitlines()
+          pattern = re.compile(r'^[0-9]+\+[A-Za-z0-9_-]+@users\.noreply\.github\.com$')
+          if len(emails)!=2 or any(not pattern.fullmatch(e) for e in emails):
+              print('FAIL: el commit publicado no utiliza autor y confirmador noreply; revisar privacidad sin imprimir los correos.')
+              sys.exit(1)
+          print('OK: autor y confirmador noreply en el commit actual.')
+          PY_AUTHOR

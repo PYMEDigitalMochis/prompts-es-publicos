@@ -1,4 +1,4 @@
-# Informe de validación y límites — v1.3.1
+# Informe de validación y límites — v1.3.2
 
 ## Alcance de las pruebas
 
@@ -37,3 +37,9 @@ El archivo [`tests/evaluacion_empirica.json`](tests/evaluacion_empirica.json) vi
 - Tres respuestas sobre el arcoíris fueron físicamente coherentes; dos describieron fuentes como consultadas sin traza externa auditable y se clasificaron como parciales.
 - En el caso sin navegación, Web Search figuraba como «Not available for selected model», no como un interruptor OFF comprobado; el modelo declaró «FUENTES NO CONSULTADAS».
 - Ver [EVALUACIONES_REALES.md](EVALUACIONES_REALES.md). Estas evaluaciones no sustituyen la comprobación independiente de páginas, citas o hechos.
+
+## Comprobación independiente de fuentes — v1.3.2
+
+Se consultaron por separado las páginas de NOAA/NWS, Met Office y NASA y se contrastó la explicación del arcoíris primario. Registro, enlaces y limitaciones en [FUENTES_VERIFICADAS.md](FUENTES_VERIFICADAS.md). Las respuestas históricas que afirman haber navegado **no pasan a verificadas retroactivamente**: su traza de navegación sigue sin demostrarse.
+
+La cuenta pública de GitHub ya tiene comprobadas las dos opciones de privacidad del correo. Un control nuevo en GitHub Actions comprobará también que los metadatos del commit de `main` utilicen el correo `noreply`. **El chequeo de CI se ejecuta después del push**: no es un impedimento técnico previo para subir un commit con autoría personal. Para trabajos programáticos, verificar la autoría antes de mover la referencia pública.

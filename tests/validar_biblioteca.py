@@ -111,5 +111,23 @@ class BibliotecaTests(unittest.TestCase):
   self.assertEqual(status['INV-001']['estado'],'regresion-parcial')
   for key in ('INV-001','PROY-004'):
    self.assertRegex(status[key]['ultima_regresion'],r'^https://agent\.tinyfish\.ai/runs/[a-zA-Z0-9-]+$')
+ def test_18_institutional_source_document(self):
+  c=(BASE/'FUENTES_VERIFICADAS.md').read_text(encoding='utf-8')
+  for fragment in ('https://www.weather.gov/fgz/Rainbow',
+                   'https://weather.metoffice.gov.uk/learn-about/weather/optical-effects/rainbows',
+                   'https://science.nasa.gov/image-article/apod-2022-december-27-a-full-circle-rainbow-over-norway/',
+                   'no prueba', 'reflexión interna'):
+   with self.subTest(fragment=fragment): self.assertIn(fragment,c)
+ def test_19_noreply_privacy_documented(self):
+  c=(BASE/'PRIVACIDAD_GITHUB.md').read_text(encoding='utf-8')
+  self.assertIn('**ambas permanecieron activadas**',c)
+  self.assertIn('autor y confirmador',c)
+  self.assertIn('alarma posterior',c)
+ def test_20_ci_checks_author_post_push(self):
+  c=(BASE/'.github/workflows/validar.yml').read_text(encoding='utf-8')
+  self.assertIn("if: github.event_name == 'push'",c)
+  self.assertIn("--format=%ae%n%ce",c)
+  self.assertIn('users',c)
+  self.assertIn('no utiliza autor y confirmador noreply',c)
  def test_11_github_action(self): self.assertTrue((BASE/'.github/workflows/validar.yml').is_file())
 if __name__=='__main__':unittest.main(verbosity=2)
