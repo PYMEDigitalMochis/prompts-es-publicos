@@ -1,5 +1,12 @@
 # Historial de cambios
 
+## 1.3.1 — 2026-11-07
+
+- Cinco respuestas reales nuevas usando los dos prompts publicados con sus variables sustituidas, en Mistral Small 4 y GPT-5.4 mini.
+- PROY-004 superó las dos regresiones; INV-001 cumplió en modo sin búsqueda disponible, pero dos afirmaciones de navegación no son verificables independientemente.
+- Totales acumulados: 52 respuestas, 41 cumplen, seis fallos históricos y cinco parciales, sin extrapolar tasas de éxito.
+- Se conservan los 30 prompts y la licencia; el repositorio privado original no cambia.
+
 ## 1.3.0 — 2026-11-07
 
 - Cubiertas las 21 fichas restantes con conversaciones reales en Duck.ai: 30 de 30 tienen al menos una evaluación empírica registrada.

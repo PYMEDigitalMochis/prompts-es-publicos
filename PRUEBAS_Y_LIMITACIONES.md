@@ -1,11 +1,11 @@
-# Informe de validación y límites — v1.3.0
+# Informe de validación y límites — v1.3.1
 
 ## Alcance de las pruebas
 
 - **Validación automática:** un conjunto ampliado de pruebas deterministas revisa los 30 archivos, su estructura, variables, ejemplos, enlaces, licencia y patrones básicos de exposición de información. GitHub Actions las ejecuta en cada cambio o PR.
 - **Recorrido de escenarios:** cinco ejercicios controlados, con datos ficticios, permiten evaluar razonadamente límites y criterios de aceptación de los prompts (no constituyen ejecución de los prompts contra un modelo externo).
-- **Evaluación empírica:** 47 conversaciones reales, 30 prompts distintos y tres modelos; seis fallos materiales y tres resultados parciales/incompletos bajo revisión estricta. Véase [EVALUACIONES_REALES.md](EVALUACIONES_REALES.md).
-- **Pendiente:** completar regresiones de los controles recién reforzados y verificar independientemente todas las fuentes referidas. Las muestras no justifican una tasa de éxito global.
+- **Evaluación empírica:** 52 respuestas reales observadas, 30 prompts distintos y tres modelos; seis fallos materiales históricos y cinco resultados parciales/incompletos bajo revisión estricta. Véase [EVALUACIONES_REALES.md](EVALUACIONES_REALES.md).
+- **Estado:** se repitieron regresiones del texto exacto de INV-001 y PROY-004; PROY-004 cumple en dos modelos e INV-001 cumple en modo sin búsqueda disponible. Las afirmaciones de navegación de dos modelos quedan sin traza independiente. Pendiente: verificar fuentes externas en cada uso. Las muestras no justifican una tasa de éxito global.
 
 ## Cinco escenarios de revisión de escritorio
 
@@ -30,3 +30,10 @@ La validación del contenido no borra información del historial Git; los commit
 ## Registro estructurado 1.3
 
 El archivo [`tests/evaluacion_empirica.json`](tests/evaluacion_empirica.json) vincula las 30 fichas con sesiones reales y dictámenes. La suite automática comprueba integridad del registro, no reevalúa las respuestas de los modelos.
+
+## Cierre de regresiones v1.3.1
+
+- Dos planes en modelos distintos marcaron tareas como propuestas, sin ciclos ni aprobación inventada.
+- Tres respuestas sobre el arcoíris fueron físicamente coherentes; dos describieron fuentes como consultadas sin traza externa auditable y se clasificaron como parciales.
+- En el caso sin navegación, Web Search figuraba como «Not available for selected model», no como un interruptor OFF comprobado; el modelo declaró «FUENTES NO CONSULTADAS».
+- Ver [EVALUACIONES_REALES.md](EVALUACIONES_REALES.md). Estas evaluaciones no sustituyen la comprobación independiente de páginas, citas o hechos.

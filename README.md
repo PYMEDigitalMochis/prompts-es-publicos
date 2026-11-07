@@ -1,6 +1,6 @@
 # Biblioteca abierta de prompts en español
 
-**30 prompts · 9 categorías · Edición pública 1.3.0**
+**30 prompts · 9 categorías · Edición pública 1.3.1**
 
 Colección de plantillas editables para investigación, planificación, desarrollo, negocios, aprendizaje, escritura, empleo y casos prácticos. Cada ficha incluye variables, una instrucción lista para copiar y criterios para comprobar su resultado. No se necesitan servicios de pago ni cuentas externas para leer las fichas.
 
@@ -29,7 +29,7 @@ Funciona desde un navegador móvil o una computadora; las instrucciones no depen
 
 ## Calidad y límites
 
-Las 30 fichas **han superado comprobaciones estructurales automáticas**. Se han documentado **47 conversaciones reales** en tres modelos, cubriendo las **30 fichas** con al menos un escenario empírico. Bajo revisión estricta: **38 cumplen**, **6 fallaron** y **3 quedaron parciales o insuficientemente verificadas**. Se reforzaron las instrucciones que causaron errores; no se garantiza que todas las salidas sean correctas ni que las pruebas representen todos los usos posibles. Un prompt no da acceso por sí solo a internet, cuentas, repositorios, dispositivos ni archivos: esas capacidades dependen de la herramienta utilizada y de los permisos disponibles. Comprueba fuentes, datos y resultados antes de actuar; no compartas información privada en ejemplos o incidencias.
+Las 30 fichas **han superado comprobaciones estructurales automáticas**. Se han documentado **52 respuestas reales observadas** en tres modelos, cubriendo las **30 fichas** con al menos un escenario empírico. Bajo revisión estricta: **41 cumplen**, **6 fallaron** y **5 quedaron parciales o insuficientemente verificadas**. Dos regresiones de planificación cumplen con el texto publicado; las afirmaciones de navegación de otros modelos no cuentan con traza independiente. Se reforzaron las instrucciones que causaron errores; no se garantiza que todas las salidas sean correctas ni que las pruebas representen todos los usos posibles. Un prompt no da acceso por sí solo a internet, cuentas, repositorios, dispositivos ni archivos: esas capacidades dependen de la herramienta utilizada y de los permisos disponibles. Comprueba fuentes, datos y resultados antes de actuar; no compartas información privada en ejemplos o incidencias.
 
 ## Archivos de referencia
 

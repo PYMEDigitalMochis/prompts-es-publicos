@@ -71,9 +71,9 @@ class BibliotecaTests(unittest.TestCase):
      with self.subTest(id=x['id'],phrase=phrase): self.assertIn(phrase,c)
  def test_13_eval_report(self):
   report=(BASE/'EVALUACIONES_REALES.md').read_text(encoding='utf-8')
-  for fragment in ('47 respuestas reales','38 cumplen','6 presentan fallos materiales','Mistral Small 4','Claude Haiku 5.5','GPT-5.4 mini'):
+  for fragment in ('52','41 cumplen','6 presentan fallos materiales','Mistral Small 4','Claude Haiku 5.5','GPT-5.4 mini'):
    self.assertIn(fragment,report)
-  self.assertEqual(report.count('https://agent.tinyfish.ai/runs/'),9)
+  self.assertEqual(report.count('https://agent.tinyfish.ai/runs/'),11)
  def test_14_privacy_guide(self):
   c=(BASE/'PRIVACIDAD_GITHUB.md').read_text(encoding='utf-8')
   self.assertIn('Keep my email addresses private',c)
@@ -100,5 +100,16 @@ class BibliotecaTests(unittest.TestCase):
     content=(BASE/x['file']).read_text(encoding='utf-8')
     for word in guards[x['id']]:
      with self.subTest(id=x['id'],guard=word):self.assertIn(word,content)
+ def test_17_latest_regression_evidence(self):
+  report=(BASE/'EVALUACIONES_REALES.md').read_text(encoding='utf-8')
+  self.assertIn('## Ronda 10',report)
+  self.assertIn('41 cumplen',report)
+  self.assertIn('5 son parciales',report)
+  data=json.loads((BASE/'tests/evaluacion_empirica.json').read_text(encoding='utf-8'))
+  status={x['id']:x for x in data}
+  self.assertEqual(status['PROY-004']['estado'],'corregido-regresion')
+  self.assertEqual(status['INV-001']['estado'],'regresion-parcial')
+  for key in ('INV-001','PROY-004'):
+   self.assertRegex(status[key]['ultima_regresion'],r'^https://agent\.tinyfish\.ai/runs/[a-zA-Z0-9-]+$')
  def test_11_github_action(self): self.assertTrue((BASE/'.github/workflows/validar.yml').is_file())
 if __name__=='__main__':unittest.main(verbosity=2)

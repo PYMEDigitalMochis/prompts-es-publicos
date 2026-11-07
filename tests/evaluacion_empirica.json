@@ -31,10 +31,11 @@
     "modelo": "GPT-5.4 mini",
     "estado": "regresion-parcial",
     "evidencia": "https://agent.tinyfish.ai/runs/5db3bf00-7f29-4001-a5c0-cee37a2e8bf6",
-    "observacion": "Respuesta científicamente plausible; afirmación de navegación sin prueba suficiente de URLs realmente leídas; en regresión declaró FUENTES NO CONSULTADAS, pero presentó \"reflexión interna total\" sin respaldo; instrucción científica afinada.",
+    "observacion": "Respuesta científicamente plausible; afirmación de navegación sin prueba suficiente de URLs realmente leídas; en regresión declaró FUENTES NO CONSULTADAS, pero presentó \"reflexión interna total\" sin respaldo; instrucción científica afinada. Regresión adicional sin Web Search disponible: dijo FUENTES NO CONSULTADAS y explicó reflexión interna parcial. Otras dos respuestas declararon navegar sin traza independiente.",
     "metodo": "ejemplo funcional derivado del prompt, no reproducción literal completa",
     "lote": "6a",
-    "regresion": "https://agent.tinyfish.ai/runs/a05c43c1-9e5a-456d-8669-35a05091791b"
+    "regresion": "https://agent.tinyfish.ai/runs/a05c43c1-9e5a-456d-8669-35a05091791b",
+    "ultima_regresion": "https://agent.tinyfish.ai/runs/a4ff9029-7051-43d8-bc27-50bc42c05d41"
   },
   {
     "id": "INV-002",
@@ -93,12 +94,13 @@
   {
     "id": "PROY-004",
     "modelo": "Mistral Small 4 (agente indica interfaz Mistral)",
-    "estado": "regresion-parcial",
+    "estado": "corregido-regresion",
     "evidencia": "https://agent.tinyfish.ai/runs/3c72f3d3-be1b-4159-a219-54285d7f6367",
-    "observacion": "Dependencia circular: bloque 3 depende del 4 y viceversa; aprobación confundida con publicación; la regresión eliminó el ciclo pero declaró \"Contenido: Ejecutada\" sin evidencia de ejecución; instrucción reforzada de nuevo.",
+    "observacion": "Dependencia circular: bloque 3 depende del 4 y viceversa; aprobación confundida con publicación; la regresión eliminó el ciclo pero declaró \"Contenido: Ejecutada\" sin evidencia de ejecución; instrucción reforzada de nuevo. Las dos regresiones finales con la ficha literal resultaron acíclicas y no marcaron tareas ejecutadas.",
     "metodo": "ejemplo funcional derivado del prompt, no reproducción literal completa",
     "lote": "6b",
-    "regresion": "https://agent.tinyfish.ai/runs/a05c43c1-9e5a-456d-8669-35a05091791b"
+    "regresion": "https://agent.tinyfish.ai/runs/a05c43c1-9e5a-456d-8669-35a05091791b",
+    "ultima_regresion": "https://agent.tinyfish.ai/runs/c081f85b-0b30-4abe-b629-e4058eafbf8a"
   },
   {
     "id": "DEV-001",

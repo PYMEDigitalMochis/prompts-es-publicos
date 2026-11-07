@@ -128,3 +128,22 @@ Para el arcoíris, la explicación básica de refacción, reflexión **interna**
 **Cambios a prompts en 1.3:** `INV-001`, `PROY-004`, `NEG-003` y `NEG-004`. Las nuevas barreras se han verificado estructuralmente; no se ha repetido una prueba externa completa *después* de los últimos ajustes a `INV-001` y `PROY-004`. No marcar esos dos casos como «regresión aprobada» hasta disponer de nueva evidencia.
 
 Los detalles normalizados por ID, modelo, alcance, evaluación y URL de sesión constan en [`tests/evaluacion_empirica.json`](tests/evaluacion_empirica.json). La exactitud de enlaces y la atribución de licencias deben contrastarse en cada uso real.
+
+## Ronda 10 — regresión exacta de INV-001 y PROY-004 (5 respuestas)
+
+Se utilizó **la sección literal «Prompt listo para copiar» publicada en v1.3.0**, rellenando únicamente las variables de ejemplo. No se introdujeron otras órdenes en los chats; la rúbrica quedó separada para el evaluador. Las respuestas fueron observadas por un navegador automatizado en Duck.ai, no mediante una API ni un entorno de laboratorio controlado. No se conservaron transcripciones íntegras verificables independientes.
+
+- [Sesión de cuatro respuestas: Mistral Small 4 y GPT-5.4 mini](https://agent.tinyfish.ai/runs/c081f85b-0b30-4abe-b629-e4058eafbf8a)
+- [Prueba de INV-001 sin herramienta de búsqueda disponible en Mistral Small 4](https://agent.tinyfish.ai/runs/a4ff9029-7051-43d8-bc27-50bc42c05d41)
+
+| Ficha | Modelo | Evaluación estricta | Evidencia principal |
+|---|---|---|---|
+| `PROY-004` | Mistral Small 4 | **Cumple** | Todos los bloques quedaron PROPUESTOS; plan sin ciclos, aprobación bloqueante y primera tarea ejecutable. |
+| `PROY-004` | GPT-5.4 mini | **Cumple** | Plan acíclico, estados PENDIENTE/PROPUESTO, sin aprobación ni publicación inventadas. |
+| `INV-001` | Mistral Small 4 (con posible búsqueda web) | **Parcial** | Física correcta, distinguió reflexión interna de total y *afirmó* haber consultado páginas de NASA, HyperPhysics y Royal Meteorological Society; no se aportó registro independiente de apertura de páginas. |
+| `INV-001` | GPT-5.4 mini (con posible búsqueda web) | **Parcial** | Física correcta, citó páginas de NOAA y otras fuentes, pero el informe de navegación se basó en afirmaciones del modelo y no en una traza independiente. |
+| `INV-001` | Mistral Small 4 (búsqueda no disponible) | **Cumple en modo sin búsqueda** | La interfaz indicaba Web Search «Not available for selected model» (no se pudo observar un interruptor ON/OFF). El modelo declaró «FUENTES NO CONSULTADAS», marcó las referencias como orientativas y no presentó reflexión total como condición necesaria. |
+
+**Dictamen de auditoría:** 3 cumplimientos y 2 casos parciales. Las respuestas que *dicen* haber leído URLs **no demuestran por sí solas** que lo hicieron; el sistema de evaluación no debe etiquetarlas como acceso verificado. La sesión sin herramienta de búsqueda ofrece evidencia suficiente del cumplimiento de la regla de transparencia para ese entorno, sin afirmar que el interruptor OFF se activó. En la explicación científica observada, el caso de arcoíris primario se describió como refracción, dispersión y reflexión interna, sin imponer reflexión interna total.
+
+**Total acumulado de respuestas observadas (versiones 1.2–1.3.1): 52.** Revisión estricta: **41 cumplen**, **6 presentan fallos materiales históricos** y **5 son parciales o insuficientemente verificadas**. Las cinco respuestas nuevas **no sustituyen ni reescriben** los 47 resultados históricos. Esta contabilidad no es un porcentaje de precisión generalizable ni una garantía sobre futuros modelos, accesos, fuentes o usos.
