@@ -28,3 +28,8 @@ Se utiliza `MAJOR.MINOR.PATCH`: cambios incompatibles, nuevas capacidades y corr
 ## Licencia
 
 La reutilización de este material se rige por [CC BY 4.0](LICENSE.md), que permite copia y adaptación con atribución, incluida la actividad comercial.
+
+
+## Evidencia de pruebas con modelos
+
+Consulta [las 23 conversaciones observadas](EVALUACIONES_REALES.md), con resultados favorables y fallos. Sus resultados no garantizan igual calidad en cualquier modelo ni permiten inventar acceso a archivos o plataformas.

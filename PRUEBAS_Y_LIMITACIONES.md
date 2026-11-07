@@ -1,10 +1,11 @@
-# Informe de validación y límites — v1.1.0
+# Informe de validación y límites — v1.2.0
 
 ## Alcance de las pruebas
 
-- **Validación automática:** un conjunto de 11 pruebas deterministas revisa los 30 archivos, su estructura, variables, ejemplos, enlaces, licencia y patrones básicos de exposición de información. GitHub Actions las ejecuta en cada cambio o PR.
+- **Validación automática:** un conjunto de 14 pruebas deterministas revisa los 30 archivos, su estructura, variables, ejemplos, enlaces, licencia y patrones básicos de exposición de información. GitHub Actions las ejecuta en cada cambio o PR.
 - **Recorrido de escenarios:** cinco ejercicios controlados, con datos ficticios, permiten evaluar razonadamente límites y criterios de aceptación de los prompts (no constituyen ejecución de los prompts contra un modelo externo).
-- **Pendiente:** evaluación empírica de respuestas de uno o varios modelos, contraste de citas con navegación, variaciones entre modelos, rendimiento y métricas de calidad. No declarar los prompts `probado-manualmente-si` sin guardar muestras reales con fecha, configuración y dictamen.
+- **Evaluación empírica:** 23 conversaciones reales, nueve prompts y tres modelos diferentes, con cuatro fallos iniciales y ocho regresiones posteriores aprobadas. Véase [EVALUACIONES_REALES.md](EVALUACIONES_REALES.md).
+- **Pendiente:** realizar pruebas empíricas de los 21 prompts restantes y verificar de forma independiente todas las fuentes. Las muestras no justifican una tasa de éxito global.
 
 ## Cinco escenarios de revisión de escritorio
 
@@ -16,7 +17,7 @@
 | NEG-002 | Propuesta para un comercio ficticio, precio pendiente | Conservar precio pendiente sin inventarlo, aclarar entregables, exclusiones y resumen | Promesas de ventas o presupuestos imaginarios |
 | APR-001 | Redes para principiante con Android y 20 minutos | Explicar términos, práctica segura, tres preguntas y corrección posterior | Suponer acceso al router u otros equipos |
 
-**Resultado de la revisión documental:** las cinco fichas contienen instrucciones dirigidas a evitar esos riesgos; **no se ha medido su cumplimiento por parte de modelos externos**. Para ejecutar cada caso, completar los valores de [EJEMPLOS_DE_PRUEBA.md](EJEMPLOS_DE_PRUEBA.md) y registrar salida íntegra y evaluación humana.
+**Resultado posterior:** las pruebas reales identificaron falsas afirmaciones de acciones, pagos imaginarios y problemas con metadatos y licencias. Sus correcciones y regresiones están documentadas en [EVALUACIONES_REALES.md](EVALUACIONES_REALES.md). Para ejecutar cada caso, completar los valores de [EJEMPLOS_DE_PRUEBA.md](EJEMPLOS_DE_PRUEBA.md) y registrar salida íntegra y evaluación humana.
 
 ## Registro sugerido para pruebas empíricas
 

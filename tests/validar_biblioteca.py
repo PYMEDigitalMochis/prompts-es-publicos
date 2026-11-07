@@ -17,8 +17,8 @@ class BibliotecaTests(unittest.TestCase):
    with self.subTest(id=x['id']):
     c=(BASE/x['file']).read_text(encoding='utf-8')
     self.assertIn('id: '+x['id']+'\n',c)
-    self.assertIn('version: 1.1.0',c)
-    self.assertIn('estado: probado-manualmente-no',c)
+    self.assertRegex(c,r'(?m)^version: 1\.(1|2)\.0$')
+    self.assertRegex(c,r'(?m)^estado: (probado-manualmente-no|evaluacion-parcial)$')
     for section in ('## Prompt listo para copiar','## Comprobación del resultado','**Campos a personalizar:**'): self.assertIn(section,c)
     decl=re.search(r'\*\*Campos a personalizar:\*\* (.+)',c).group(1)
     self.assertEqual(set(re.findall(r'\[([A-Z0-9_]+)\]',decl)),set(x['variables']))
@@ -57,5 +57,26 @@ class BibliotecaTests(unittest.TestCase):
  def test_10_five_scenarios_documented(self):
   c=(BASE/'PRUEBAS_Y_LIMITACIONES.md').read_text(encoding='utf-8')
   for id in ('INV-001','PROY-001','DEV-001','NEG-002','APR-001'):self.assertIn(id,c)
+ def test_12_guardas_de_evidencia(self):
+  required={
+   'DEV-001':['ESTADO: NO VERIFICADO','Cambios realizados: NINGUNO','Pruebas ejecutadas: NINGUNA'],
+   'PROY-001':['FUENTES NO DISPONIBLES','Resultado comprobado: NINGUNO','Evidencia: NO DISPONIBLE'],
+   'NEG-002':['PENDIENTE DE ACORDAR','No fijes'],
+   'INV-003':['NO VERIFICADA EN ESTA SESIÓN','fuentes realmente consultadas'],
+   'ESP-003':['Duración: NO MEDIDA','LICENCIA NO VERIFICADA — NO UTILIZAR','Contenido: DESCONOCIDO']}
+  for x in ITEMS:
+   if x['id'] in required:
+    c=(BASE/x['file']).read_text(encoding='utf-8')
+    for phrase in required[x['id']]:
+     with self.subTest(id=x['id'],phrase=phrase): self.assertIn(phrase,c)
+ def test_13_eval_report(self):
+  report=(BASE/'EVALUACIONES_REALES.md').read_text(encoding='utf-8')
+  for fragment in ('23 conversaciones reales','19 cumplen','4 presentan fallos','Mistral Small 4','Claude Haiku 5.5','GPT-5.4 mini'):
+   self.assertIn(fragment,report)
+  self.assertEqual(report.count('https://agent.tinyfish.ai/runs/'),5)
+ def test_14_privacy_guide(self):
+  c=(BASE/'PRIVACIDAD_GITHUB.md').read_text(encoding='utf-8')
+  self.assertIn('Keep my email addresses private',c)
+  self.assertIn('caché',c)
  def test_11_github_action(self): self.assertTrue((BASE/'.github/workflows/validar.yml').is_file())
 if __name__=='__main__':unittest.main(verbosity=2)

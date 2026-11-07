@@ -1,6 +1,6 @@
 # Biblioteca abierta de prompts en español
 
-**30 prompts · 9 categorías · Edición pública 1.1.0**
+**30 prompts · 9 categorías · Edición pública 1.2.0**
 
 Colección de plantillas editables para investigación, planificación, desarrollo, negocios, aprendizaje, escritura, empleo y casos prácticos. Cada ficha incluye variables, una instrucción lista para copiar y criterios para comprobar su resultado. No se necesitan servicios de pago ni cuentas externas para leer las fichas.
 
@@ -29,13 +29,15 @@ Funciona desde un navegador móvil o una computadora; las instrucciones no depen
 
 ## Calidad y límites
 
-Las fichas **han superado comprobaciones estructurales automáticas**, pero **no tienen pruebas documentadas de ejecución con modelos de IA**. Un prompt no da acceso por sí solo a internet, cuentas, repositorios, dispositivos ni archivos: esas capacidades dependen de la herramienta utilizada y de los permisos disponibles. Comprueba fuentes, datos y resultados antes de actuar; no compartas información privada en ejemplos o incidencias.
+Las 30 fichas **han superado comprobaciones estructurales automáticas**. Se han documentado **23 conversaciones reales** en tres modelos y nueve fichas de las nueve categorías. Hubo cuatro respuestas defectuosas y ocho pruebas de regresión posteriores aprobadas. Los otros 21 prompts aún no tienen pruebas empíricas documentadas. Un prompt no da acceso por sí solo a internet, cuentas, repositorios, dispositivos ni archivos: esas capacidades dependen de la herramienta utilizada y de los permisos disponibles. Comprueba fuentes, datos y resultados antes de actuar; no compartas información privada en ejemplos o incidencias.
 
 ## Archivos de referencia
 
 - [Catálogo](CATALOGO.md)
 - [Ejemplos de entrada para las 30 fichas](EJEMPLOS_DE_PRUEBA.md)
 - [Validación automatizada y límites](PRUEBAS_Y_LIMITACIONES.md)
+- [Evaluaciones reales con distintos modelos](EVALUACIONES_REALES.md)
+- [Privacidad del historial y correo de GitHub](PRIVACIDAD_GITHUB.md)
 - [Guía de uso](GUIA_DE_USO.md)
 - [Plantilla para nuevas fichas](PLANTILLA_DE_PROMPT.md)
 - [Guía de contribuciones](CONTRIBUTING.md)
