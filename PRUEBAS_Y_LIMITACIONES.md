@@ -1,11 +1,11 @@
-# Informe de validación y límites — v1.2.0
+# Informe de validación y límites — v1.3.0
 
 ## Alcance de las pruebas
 
-- **Validación automática:** un conjunto de 14 pruebas deterministas revisa los 30 archivos, su estructura, variables, ejemplos, enlaces, licencia y patrones básicos de exposición de información. GitHub Actions las ejecuta en cada cambio o PR.
+- **Validación automática:** un conjunto ampliado de pruebas deterministas revisa los 30 archivos, su estructura, variables, ejemplos, enlaces, licencia y patrones básicos de exposición de información. GitHub Actions las ejecuta en cada cambio o PR.
 - **Recorrido de escenarios:** cinco ejercicios controlados, con datos ficticios, permiten evaluar razonadamente límites y criterios de aceptación de los prompts (no constituyen ejecución de los prompts contra un modelo externo).
-- **Evaluación empírica:** 23 conversaciones reales, nueve prompts y tres modelos diferentes, con cuatro fallos iniciales y ocho regresiones posteriores aprobadas. Véase [EVALUACIONES_REALES.md](EVALUACIONES_REALES.md).
-- **Pendiente:** realizar pruebas empíricas de los 21 prompts restantes y verificar de forma independiente todas las fuentes. Las muestras no justifican una tasa de éxito global.
+- **Evaluación empírica:** 47 conversaciones reales, 30 prompts distintos y tres modelos; seis fallos materiales y tres resultados parciales/incompletos bajo revisión estricta. Véase [EVALUACIONES_REALES.md](EVALUACIONES_REALES.md).
+- **Pendiente:** completar regresiones de los controles recién reforzados y verificar independientemente todas las fuentes referidas. Las muestras no justifican una tasa de éxito global.
 
 ## Cinco escenarios de revisión de escritorio
 
@@ -26,3 +26,7 @@ Registrar ID, fecha, herramienta/modelo, versión si se conoce, entradas fictici
 ## Privacidad
 
 La validación del contenido no borra información del historial Git; los commits anteriores pueden mostrar identidad/correo configurados por el autor. No forzar reescrituras del historial para esconderlo sin revisión específica. GitHub permite configurar un correo `noreply` para futuros commits. Las comprobaciones automatizadas son heurísticas, no una garantía universal de ausencia de secretos.
+
+## Registro estructurado 1.3
+
+El archivo [`tests/evaluacion_empirica.json`](tests/evaluacion_empirica.json) vincula las 30 fichas con sesiones reales y dictámenes. La suite automática comprueba integridad del registro, no reevalúa las respuestas de los modelos.

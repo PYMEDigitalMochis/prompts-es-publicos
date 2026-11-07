@@ -17,7 +17,7 @@ class BibliotecaTests(unittest.TestCase):
    with self.subTest(id=x['id']):
     c=(BASE/x['file']).read_text(encoding='utf-8')
     self.assertIn('id: '+x['id']+'\n',c)
-    self.assertRegex(c,r'(?m)^version: 1\.(1|2)\.0$')
+    self.assertRegex(c,r'(?m)^version: 1\.(1|2|3)\.0$')
     self.assertRegex(c,r'(?m)^estado: (probado-manualmente-no|evaluacion-parcial)$')
     for section in ('## Prompt listo para copiar','## Comprobación del resultado','**Campos a personalizar:**'): self.assertIn(section,c)
     decl=re.search(r'\*\*Campos a personalizar:\*\* (.+)',c).group(1)
@@ -71,12 +71,34 @@ class BibliotecaTests(unittest.TestCase):
      with self.subTest(id=x['id'],phrase=phrase): self.assertIn(phrase,c)
  def test_13_eval_report(self):
   report=(BASE/'EVALUACIONES_REALES.md').read_text(encoding='utf-8')
-  for fragment in ('23 conversaciones reales','19 cumplen','4 presentan fallos','Mistral Small 4','Claude Haiku 5.5','GPT-5.4 mini'):
+  for fragment in ('47 respuestas reales','38 cumplen','6 presentan fallos materiales','Mistral Small 4','Claude Haiku 5.5','GPT-5.4 mini'):
    self.assertIn(fragment,report)
-  self.assertEqual(report.count('https://agent.tinyfish.ai/runs/'),5)
+  self.assertEqual(report.count('https://agent.tinyfish.ai/runs/'),9)
  def test_14_privacy_guide(self):
   c=(BASE/'PRIVACIDAD_GITHUB.md').read_text(encoding='utf-8')
   self.assertIn('Keep my email addresses private',c)
   self.assertIn('caché',c)
+ def test_15_empirical_coverage(self):
+  evidence=json.loads((BASE/'tests'/'evaluacion_empirica.json').read_text(encoding='utf-8'))
+  self.assertEqual(len(evidence),30)
+  self.assertEqual({x['id'] for x in evidence},{x['id'] for x in ITEMS})
+  allowed={'cumple','cumple-con-observaciones','cumple-con-observaciones','corregido-regresion','regresion-parcial','pendiente-de-verificacion','falla-inicial'}
+  for x in evidence:
+   with self.subTest(id=x['id']):
+    self.assertIn(x['estado'],allowed)
+    self.assertTrue(x['modelo'])
+    self.assertIn('funcional',x['metodo'])
+    self.assertRegex(x['evidencia'],r'^https://agent\.tinyfish\.ai/runs/[a-zA-Z0-9-]+$')
+ def test_16_empirical_safeguards(self):
+  guards={
+   'PROY-004':['**sin ciclos**','NO está ejecutado','BLOQUEANTE'],
+   'NEG-004':['PENDIENTE DE CONFIRMACIÓN','números de contacto','NO CONECTADA'],
+   'NEG-003':['DEMO NO CREADA','SIMULACIÓN PROPUESTA, NO OPERATIVA'],
+   'INV-001':['FUENTES NO CONSULTADAS','CONSULTADA','reflexión interna total']}
+  for x in ITEMS:
+   if x['id'] in guards:
+    content=(BASE/x['file']).read_text(encoding='utf-8')
+    for word in guards[x['id']]:
+     with self.subTest(id=x['id'],guard=word):self.assertIn(word,content)
  def test_11_github_action(self): self.assertTrue((BASE/'.github/workflows/validar.yml').is_file())
 if __name__=='__main__':unittest.main(verbosity=2)

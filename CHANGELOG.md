@@ -1,5 +1,14 @@
 # Historial de cambios
 
+## 1.3.0 — 2026-11-07
+
+- Cubiertas las 21 fichas restantes con conversaciones reales en Duck.ai: 30 de 30 tienen al menos una evaluación empírica registrada.
+- Totales históricos: 47 respuestas en tres modelos, con 38 cumplimientos, seis fallos materiales y tres revisiones incompletas o parciales (no extrapolables).
+- Detectadas dependencias circulares, horarios y contactos inventados y afirmaciones de navegación no verificables.
+- Reforzados cuatro prompts: INV-001, PROY-004, NEG-003 y NEG-004; controles estructurales y matriz de evidencia por ID.
+- Dos regresiones quedaron parciales tras la revisión estricta; se documentan pendientes sin declarar aprobación total.
+- Se conserva la separación entre el repositorio público y el original privado; no usar correos personales en commits públicos.
+
 ## 1.2.0 — 2026-11-06
 
 - Evaluadas 23 conversaciones reales de tres modelos en 9 prompts que cubren las nueve categorías; registradas cinco ejecuciones de navegador.

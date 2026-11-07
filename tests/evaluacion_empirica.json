@@ -1,0 +1,275 @@
+[
+  {
+    "id": "META-001",
+    "modelo": "GPT-5.4 mini",
+    "estado": "cumple",
+    "evidencia": "https://agent.tinyfish.ai/runs/4c16f8f9-a0c1-4fe2-9e0c-655253f0f534",
+    "observacion": "Diseño de un prompt copiable, variables y tres criterios",
+    "metodo": "ejemplo funcional derivado del prompt, no reproducción literal completa",
+    "lote": "rondas-anteriores"
+  },
+  {
+    "id": "META-002",
+    "modelo": "GPT-5.4 mini",
+    "estado": "cumple",
+    "evidencia": "https://agent.tinyfish.ai/runs/5db3bf00-7f29-4001-a5c0-cee37a2e8bf6",
+    "observacion": "Prompt optimizado y test; posible errata menor en texto mostrado",
+    "metodo": "ejemplo funcional derivado del prompt, no reproducción literal completa",
+    "lote": "6a"
+  },
+  {
+    "id": "META-003",
+    "modelo": "GPT-5.4 mini",
+    "estado": "cumple",
+    "evidencia": "https://agent.tinyfish.ai/runs/5db3bf00-7f29-4001-a5c0-cee37a2e8bf6",
+    "observacion": "Selecciona tutoría APR-001 sin inventar fichas",
+    "metodo": "ejemplo funcional derivado del prompt, no reproducción literal completa",
+    "lote": "6a"
+  },
+  {
+    "id": "INV-001",
+    "modelo": "GPT-5.4 mini",
+    "estado": "regresion-parcial",
+    "evidencia": "https://agent.tinyfish.ai/runs/5db3bf00-7f29-4001-a5c0-cee37a2e8bf6",
+    "observacion": "Respuesta científicamente plausible; afirmación de navegación sin prueba suficiente de URLs realmente leídas; en regresión declaró FUENTES NO CONSULTADAS, pero presentó \"reflexión interna total\" sin respaldo; instrucción científica afinada.",
+    "metodo": "ejemplo funcional derivado del prompt, no reproducción literal completa",
+    "lote": "6a",
+    "regresion": "https://agent.tinyfish.ai/runs/a05c43c1-9e5a-456d-8669-35a05091791b"
+  },
+  {
+    "id": "INV-002",
+    "modelo": "GPT-5.4 mini",
+    "estado": "cumple",
+    "evidencia": "https://agent.tinyfish.ai/runs/5db3bf00-7f29-4001-a5c0-cee37a2e8bf6",
+    "observacion": "Pesos suman 100 y puntuaciones se presentan hipotéticas",
+    "metodo": "ejemplo funcional derivado del prompt, no reproducción literal completa",
+    "lote": "6a"
+  },
+  {
+    "id": "INV-003",
+    "modelo": "Claude Haiku 5.5 y Mistral Small 4",
+    "estado": "cumple-con-observaciones",
+    "evidencia": "https://agent.tinyfish.ai/runs/a1030550-feba-417a-8070-fba09f919c03",
+    "observacion": "Veredicto físico principal correcto; citas del modelo no verificadas independientemente",
+    "metodo": "ejemplo funcional derivado del prompt, no reproducción literal completa",
+    "lote": "rondas-anteriores"
+  },
+  {
+    "id": "INV-004",
+    "modelo": "GPT-5.4 mini",
+    "estado": "cumple",
+    "evidencia": "https://agent.tinyfish.ai/runs/5db3bf00-7f29-4001-a5c0-cee37a2e8bf6",
+    "observacion": "No rellena noticias sin verificación; radar tripartito",
+    "metodo": "ejemplo funcional derivado del prompt, no reproducción literal completa",
+    "lote": "6a"
+  },
+  {
+    "id": "PROY-001",
+    "modelo": "Claude Haiku 5.5 y Mistral Small 4",
+    "estado": "corregido-regresion",
+    "evidencia": "https://agent.tinyfish.ai/runs/33d65980-943d-4e18-a99f-682225bc07c0",
+    "observacion": "Al principio Mistral inventó verificaciones; barrera posterior cumplida",
+    "metodo": "ejemplo funcional derivado del prompt, no reproducción literal completa",
+    "lote": "rondas-anteriores"
+  },
+  {
+    "id": "PROY-002",
+    "modelo": "GPT-5.4 mini",
+    "estado": "cumple",
+    "evidencia": "https://agent.tinyfish.ai/runs/5db3bf00-7f29-4001-a5c0-cee37a2e8bf6",
+    "observacion": "Reconoce no disponer de documentación: auditoría no ejecutada",
+    "metodo": "ejemplo funcional derivado del prompt, no reproducción literal completa",
+    "lote": "6a"
+  },
+  {
+    "id": "PROY-003",
+    "modelo": "GPT-5.4 mini",
+    "estado": "cumple",
+    "evidencia": "https://agent.tinyfish.ai/runs/5db3bf00-7f29-4001-a5c0-cee37a2e8bf6",
+    "observacion": "Conserva estado de decisión confirmada y propuesta, sin autor inventado",
+    "metodo": "ejemplo funcional derivado del prompt, no reproducción literal completa",
+    "lote": "6a"
+  },
+  {
+    "id": "PROY-004",
+    "modelo": "Mistral Small 4 (agente indica interfaz Mistral)",
+    "estado": "regresion-parcial",
+    "evidencia": "https://agent.tinyfish.ai/runs/3c72f3d3-be1b-4159-a219-54285d7f6367",
+    "observacion": "Dependencia circular: bloque 3 depende del 4 y viceversa; aprobación confundida con publicación; la regresión eliminó el ciclo pero declaró \"Contenido: Ejecutada\" sin evidencia de ejecución; instrucción reforzada de nuevo.",
+    "metodo": "ejemplo funcional derivado del prompt, no reproducción literal completa",
+    "lote": "6b",
+    "regresion": "https://agent.tinyfish.ai/runs/a05c43c1-9e5a-456d-8669-35a05091791b"
+  },
+  {
+    "id": "DEV-001",
+    "modelo": "Claude Haiku 5.5 y Mistral Small 4",
+    "estado": "corregido-regresion",
+    "evidencia": "https://agent.tinyfish.ai/runs/33d65980-943d-4e18-a99f-682225bc07c0",
+    "observacion": "Al principio Mistral inventó cambios y pruebas; regresión posterior pasó",
+    "metodo": "ejemplo funcional derivado del prompt, no reproducción literal completa",
+    "lote": "rondas-anteriores"
+  },
+  {
+    "id": "DEV-002",
+    "modelo": "Mistral Small 4 (agente indica interfaz Mistral)",
+    "estado": "cumple",
+    "evidencia": "https://agent.tinyfish.ai/runs/3c72f3d3-be1b-4159-a219-54285d7f6367",
+    "observacion": "Dictamen NO VERIFICABLE; sin supuestos checks ni merge",
+    "metodo": "ejemplo funcional derivado del prompt, no reproducción literal completa",
+    "lote": "6b"
+  },
+  {
+    "id": "DEV-003",
+    "modelo": "Mistral Small 4 (agente indica interfaz Mistral)",
+    "estado": "cumple",
+    "evidencia": "https://agent.tinyfish.ai/runs/3c72f3d3-be1b-4159-a219-54285d7f6367",
+    "observacion": "HTTP observado no medido; preview ficticio no validado",
+    "metodo": "ejemplo funcional derivado del prompt, no reproducción literal completa",
+    "lote": "6b"
+  },
+  {
+    "id": "DEV-004",
+    "modelo": "Mistral Small 4 (agente indica interfaz Mistral)",
+    "estado": "cumple",
+    "evidencia": "https://agent.tinyfish.ai/runs/3c72f3d3-be1b-4159-a219-54285d7f6367",
+    "observacion": "Propuesta no aplicada; pruebas pendientes",
+    "metodo": "ejemplo funcional derivado del prompt, no reproducción literal completa",
+    "lote": "6b"
+  },
+  {
+    "id": "NEG-001",
+    "modelo": "Mistral Small 4 (agente indica interfaz Mistral)",
+    "estado": "cumple",
+    "evidencia": "https://agent.tinyfish.ai/runs/3c72f3d3-be1b-4159-a219-54285d7f6367",
+    "observacion": "Prospección de localidad ficticia sin contactos inventados",
+    "metodo": "ejemplo funcional derivado del prompt, no reproducción literal completa",
+    "lote": "6b"
+  },
+  {
+    "id": "NEG-002",
+    "modelo": "Claude Haiku 5.5, Mistral Small 4 y GPT-5.4 mini",
+    "estado": "corregido-regresion",
+    "evidencia": "https://agent.tinyfish.ai/runs/33d65980-943d-4e18-a99f-682225bc07c0",
+    "observacion": "Inicialmente Mistral inventó anticipo; después lo dejó pendiente",
+    "metodo": "ejemplo funcional derivado del prompt, no reproducción literal completa",
+    "lote": "rondas-anteriores"
+  },
+  {
+    "id": "NEG-003",
+    "modelo": "Mistral Small 4 (agente indica interfaz Mistral)",
+    "estado": "cumple-con-observaciones",
+    "evidencia": "https://agent.tinyfish.ai/runs/3c72f3d3-be1b-4159-a219-54285d7f6367",
+    "observacion": "Conceptos de demos etiquetados; conviene diferenciar simulación y funcionalidad",
+    "metodo": "ejemplo funcional derivado del prompt, no reproducción literal completa",
+    "lote": "6b"
+  },
+  {
+    "id": "NEG-004",
+    "modelo": "Mistral Small 4 (agente indica interfaz Mistral)",
+    "estado": "corregido-regresion",
+    "evidencia": "https://agent.tinyfish.ai/runs/3c72f3d3-be1b-4159-a219-54285d7f6367",
+    "observacion": "Introdujo franja horaria genérica sin confirmación y número de contacto de ejemplo; nueva regresión sin franjas horarias ni número inventado.",
+    "metodo": "ejemplo funcional derivado del prompt, no reproducción literal completa",
+    "lote": "6b",
+    "regresion": "https://agent.tinyfish.ai/runs/a05c43c1-9e5a-456d-8669-35a05091791b"
+  },
+  {
+    "id": "APR-001",
+    "modelo": "GPT-5.4 mini",
+    "estado": "cumple",
+    "evidencia": "https://agent.tinyfish.ai/runs/4c16f8f9-a0c1-4fe2-9e0c-655253f0f534",
+    "observacion": "Actividad segura en Android sin acceso al router",
+    "metodo": "ejemplo funcional derivado del prompt, no reproducción literal completa",
+    "lote": "rondas-anteriores"
+  },
+  {
+    "id": "APR-002",
+    "modelo": "GPT-5.4 mini",
+    "estado": "cumple",
+    "evidencia": "https://agent.tinyfish.ai/runs/41873b31-6d80-4549-86b0-828b2611026b",
+    "observacion": "Tres correcciones correctas de tres respuestas y actividad Android",
+    "metodo": "ejemplo funcional derivado del prompt, no reproducción literal completa",
+    "lote": "6c"
+  },
+  {
+    "id": "APR-003",
+    "modelo": "GPT-5.4 mini",
+    "estado": "cumple",
+    "evidencia": "https://agent.tinyfish.ai/runs/41873b31-6d80-4549-86b0-828b2611026b",
+    "observacion": "Distingue observaciones de hipótesis, sin diagnóstico categórico",
+    "metodo": "ejemplo funcional derivado del prompt, no reproducción literal completa",
+    "lote": "6c"
+  },
+  {
+    "id": "ESC-001",
+    "modelo": "GPT-5.4 mini",
+    "estado": "cumple",
+    "evidencia": "https://agent.tinyfish.ai/runs/41873b31-6d80-4549-86b0-828b2611026b",
+    "observacion": "Conserva voz y duda sobre título del libro, sin añadir autor",
+    "metodo": "ejemplo funcional derivado del prompt, no reproducción literal completa",
+    "lote": "6c"
+  },
+  {
+    "id": "ESC-002",
+    "modelo": "GPT-5.4 mini",
+    "estado": "cumple",
+    "evidencia": "https://agent.tinyfish.ai/runs/4c16f8f9-a0c1-4fe2-9e0c-655253f0f534",
+    "observacion": "Guion y notas de producción; licencias pendientes",
+    "metodo": "ejemplo funcional derivado del prompt, no reproducción literal completa",
+    "lote": "rondas-anteriores"
+  },
+  {
+    "id": "EMP-001",
+    "modelo": "GPT-5.4 mini y Mistral Small 4",
+    "estado": "cumple",
+    "evidencia": "https://agent.tinyfish.ai/runs/4c16f8f9-a0c1-4fe2-9e0c-655253f0f534",
+    "observacion": "No inventó ofertas en localidad ficticia",
+    "metodo": "ejemplo funcional derivado del prompt, no reproducción literal completa",
+    "lote": "rondas-anteriores"
+  },
+  {
+    "id": "EMP-002",
+    "modelo": "GPT-5.4 mini",
+    "estado": "cumple",
+    "evidencia": "https://agent.tinyfish.ai/runs/41873b31-6d80-4549-86b0-828b2611026b",
+    "observacion": "No inventa Excel, cursos, méritos ni cifras en CV",
+    "metodo": "ejemplo funcional derivado del prompt, no reproducción literal completa",
+    "lote": "6c"
+  },
+  {
+    "id": "ESP-001",
+    "modelo": "GPT-5.4 mini",
+    "estado": "cumple",
+    "evidencia": "https://agent.tinyfish.ai/runs/41873b31-6d80-4549-86b0-828b2611026b",
+    "observacion": "BLOQUEADO sin URL preview ni archivos, sin autorizar publicación",
+    "metodo": "ejemplo funcional derivado del prompt, no reproducción literal completa",
+    "lote": "6c"
+  },
+  {
+    "id": "ESP-002",
+    "modelo": "GPT-5.4 mini",
+    "estado": "cumple",
+    "evidencia": "https://agent.tinyfish.ai/runs/41873b31-6d80-4549-86b0-828b2611026b",
+    "observacion": "Productos con especificaciones y fotos no disponibles, ninguna inventada",
+    "metodo": "ejemplo funcional derivado del prompt, no reproducción literal completa",
+    "lote": "6c"
+  },
+  {
+    "id": "ESP-003",
+    "modelo": "GPT-5.4 mini y Mistral Small 4",
+    "estado": "corregido-regresion",
+    "evidencia": "https://agent.tinyfish.ai/runs/58ac8581-fe69-4089-a004-2d765dbb7226",
+    "observacion": "Inicialmente Mistral inventó duración y licencias; regresión marcó no medido y no verificado",
+    "metodo": "ejemplo funcional derivado del prompt, no reproducción literal completa",
+    "lote": "rondas-anteriores"
+  },
+  {
+    "id": "ESP-004",
+    "modelo": "GPT-5.4 mini",
+    "estado": "cumple",
+    "evidencia": "https://agent.tinyfish.ai/runs/41873b31-6d80-4549-86b0-828b2611026b",
+    "observacion": "Distingue canon desconocido y texto como borrador no canónico",
+    "metodo": "ejemplo funcional derivado del prompt, no reproducción literal completa",
+    "lote": "6c"
+  }
+]

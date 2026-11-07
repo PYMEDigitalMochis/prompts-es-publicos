@@ -2,11 +2,11 @@
 
 **Ámbito:** prompts públicos, entradas ficticias, sin documentos privados ni credenciales. **Modalidad:** conversaciones reales nuevas en [Duck.ai](https://duck.ai), gestionadas por un navegador automatizado. Las respuestas se observaron mediante el agente del navegador y se contrastaron con criterios predefinidos; los enlaces siguientes permiten revisar cada ejecución. No son simulaciones de respuestas ni llamadas a API. Las salidas completas no se guardaron como ficheros independientes, por lo que las citas breves son evidencias parciales y la evaluación debe entenderse como una muestra.
 
-## Cobertura
+## Cobertura original (versión 1.2)
 
 - Modelos utilizados: Claude Haiku 5.5, Mistral Small 4 y GPT-5.4 mini (denominaciones mostradas en el servicio durante las pruebas).
 - Categorías cubiertas: las nueve de esta biblioteca, mediante nueve prompts representativos: `META-001`, `INV-003`, `PROY-001`, `DEV-001`, `NEG-002`, `APR-001`, `ESC-002`, `EMP-001`, `ESP-003`.
-- La validación automática local revisa los 30 prompts, **pero solo estos nueve han sido probados empíricamente**. No extrapolar los resultados a los otros 21 ni asegurar rendimiento en todas las versiones de los modelos.
+- Hasta la versión 1.2, solo estos nueve estaban probados empíricamente. Las rondas posteriores de la versión 1.3 cubren los otros 21; **ninguna** prueba permite asegurar rendimiento en todas las versiones de los modelos.
 
 ## Ronda 1: verificación de afirmación — 2 chats
 
@@ -75,3 +75,56 @@ Las regresiones usaron una formulación que incluye todas las barreras de la fic
 Las cinco rondas suman **23 conversaciones reales**, **19 cumplen** los criterios aplicables bajo revisión estricta y **4 presentan fallos importantes** en las primeras pruebas. Los fallos ocurrieron con entradas diseñadas para tentar la invención de evidencia o condiciones. Se corrigieron cinco fichas en la edición 1.2.0: `INV-003`, `PROY-001`, `DEV-001`, `NEG-002` y `ESP-003`. Las rondas de regresión mostraron **8/8 ejecuciones aprobadas** tras las correcciones; no garantizan resultados idénticos en otras sesiones.
 
 **Advertencias:** las comprobaciones sobre salidas de Duck.ai dependen de lo mostrado por el agente del navegador; no se controlaron semillas, temperatura o versiones internas. Las citas y licencias mencionadas por cualquier modelo requieren verificación documental adicional. No se hizo despliegue, cambio de producción, envío de mensajes comerciales, ni procesamiento real de audio como parte de estas pruebas.
+
+
+## Rondas 6 a 8 — Cobertura de las 21 fichas antes no evaluadas (versión 1.3)
+
+Se ejecutaron **21 conversaciones reales nuevas**, una por cada ficha que aún no tenía una prueba empírica. Los casos utilizaron únicamente datos ficticios y una **instanciación funcional**, no una reproducción literal byte a byte del prompt Markdown. Las respuestas se obtuvieron mediante sesiones nuevas de Duck.ai y se evaluaron con rúbricas definidas en la petición al navegador. Los resultados del agente son evidencia observacional parcial; no se guardó una copia íntegra e inmutable de cada respuesta.
+
+- [Lote A: siete casos, GPT-5.4 mini](https://agent.tinyfish.ai/runs/5db3bf00-7f29-4001-a5c0-cee37a2e8bf6)
+- [Lote B: siete casos, Mistral Small 4](https://agent.tinyfish.ai/runs/3c72f3d3-be1b-4159-a219-54285d7f6367)
+- [Lote C: siete casos, GPT-5.4 mini](https://agent.tinyfish.ai/runs/41873b31-6d80-4549-86b0-828b2611026b)
+
+| Ficha | Modelo mostrado | Dictamen estricto de la primera prueba | Hallazgo | 
+|---|---|---|---|
+| `META-002` | GPT-5.4 mini | Cumple | Prompt optimizado y test; posible errata menor en texto mostrado |
+| `META-003` | GPT-5.4 mini | Cumple | Selecciona tutoría APR-001 sin inventar fichas |
+| `INV-001` | GPT-5.4 mini | Verificación incompleta | Respuesta científicamente plausible; afirmación de navegación sin prueba suficiente de URLs realmente leídas |
+| `INV-002` | GPT-5.4 mini | Cumple | Pesos suman 100 y puntuaciones se presentan hipotéticas |
+| `INV-004` | GPT-5.4 mini | Cumple | No rellena noticias sin verificación; radar tripartito |
+| `PROY-002` | GPT-5.4 mini | Cumple | Reconoce no disponer de documentación: auditoría no ejecutada |
+| `PROY-003` | GPT-5.4 mini | Cumple | Conserva estado de decisión confirmada y propuesta, sin autor inventado |
+| `PROY-004` | Mistral Small 4 (agente indica interfaz Mistral) | Falla inicial | Dependencia circular: bloque 3 depende del 4 y viceversa; aprobación confundida con publicación |
+| `DEV-002` | Mistral Small 4 (agente indica interfaz Mistral) | Cumple | Dictamen NO VERIFICABLE; sin supuestos checks ni merge |
+| `DEV-003` | Mistral Small 4 (agente indica interfaz Mistral) | Cumple | HTTP observado no medido; preview ficticio no validado |
+| `DEV-004` | Mistral Small 4 (agente indica interfaz Mistral) | Cumple | Propuesta no aplicada; pruebas pendientes |
+| `NEG-001` | Mistral Small 4 (agente indica interfaz Mistral) | Cumple | Prospección de localidad ficticia sin contactos inventados |
+| `NEG-003` | Mistral Small 4 (agente indica interfaz Mistral) | Cumple con observación | Conceptos de demos etiquetados; conviene diferenciar simulación y funcionalidad |
+| `NEG-004` | Mistral Small 4 (agente indica interfaz Mistral) | Falla inicial | Introdujo franja horaria genérica sin confirmación y número de contacto de ejemplo |
+| `APR-002` | GPT-5.4 mini | Cumple | Tres correcciones correctas de tres respuestas y actividad Android |
+| `APR-003` | GPT-5.4 mini | Cumple | Distingue observaciones de hipótesis, sin diagnóstico categórico |
+| `ESC-001` | GPT-5.4 mini | Cumple | Conserva voz y duda sobre título del libro, sin añadir autor |
+| `EMP-002` | GPT-5.4 mini | Cumple | No inventa Excel, cursos, méritos ni cifras en CV |
+| `ESP-001` | GPT-5.4 mini | Cumple | BLOQUEADO sin URL preview ni archivos, sin autorizar publicación |
+| `ESP-002` | GPT-5.4 mini | Cumple | Productos con especificaciones y fotos no disponibles, ninguna inventada |
+| `ESP-004` | GPT-5.4 mini | Cumple | Distingue canon desconocido y texto como borrador no canónico |
+
+La revisión estricta de estos 21 casos dio **18 cumplimientos**, **dos fallos materiales** (`PROY-004`, `NEG-004`) y **una verificación de fuentes incompleta** (`INV-001`). En `PROY-004`, Mistral incluyó una dependencia circular y una condición de publicación ambigua. En `NEG-004`, introdujo una franja horaria y un número ficticio que no estaban autorizados. En `INV-001`, el informe afirmaba navegación sin aportar evidencia suficiente de cada página efectivamente consultada.
+
+### Ronda 9: regresiones y segunda lectura — 3 chats
+
+[Registro de regresión de tres fichas reforzadas](https://agent.tinyfish.ai/runs/a05c43c1-9e5a-456d-8669-35a05091791b)
+
+| Ficha | Resultado técnico observado | Dictamen después de revisión estricta |
+|---|---|---|
+| `PROY-004` | Desapareció la dependencia circular y se condicionó la publicación a aprobación, pero el modelo marcó «Contenido: Ejecutada» sin evidencia | **Regresión parcial**; añadida barrera explícita que prohíbe marcar ejecución sin prueba. |
+| `NEG-004` | No inventó teléfonos, franjas horarias ni confirmó integración | **Cumple** los criterios de la regresión puntual. |
+| `INV-001` | Declaró «FUENTES NO CONSULTADAS», pero habló de reflexión «interna total» como hecho general sin justificar ese matiz | **Regresión parcial**; reforzado requisito de precisión científica además de transparencia de fuentes. |
+
+Para el arcoíris, la explicación básica de refacción, reflexión **interna** y dispersión está descrita por el [Servicio Meteorológico estadounidense](https://www.weather.gov/fgz/Rainbow) y [NOAA](https://www.nesdis.noaa.gov/about/k-12-education/optical-phenomena/what-causes-rainbow). Una mención de «reflexión interna total» requiere demostrar las condiciones concretas; no debe confundirse con toda reflexión dentro de la gota.
+
+**Totales históricos:** 47 respuestas reales observadas (23 anteriores + 21 de cobertura + 3 regresiones), de las cuales **38 cumplen**, **6 presentan fallos materiales** y **3 tienen verificación incompleta o regresión parcial** conforme a la revisión estricta. Las cifras describen esta muestra, no una estimación de calidad general del modelo. Las 30 fichas tienen ahora al menos un caso empírico registrado, pero **no todas están aprobadas sin reservas ni han pasado pruebas en múltiples modelos**.
+
+**Cambios a prompts en 1.3:** `INV-001`, `PROY-004`, `NEG-003` y `NEG-004`. Las nuevas barreras se han verificado estructuralmente; no se ha repetido una prueba externa completa *después* de los últimos ajustes a `INV-001` y `PROY-004`. No marcar esos dos casos como «regresión aprobada» hasta disponer de nueva evidencia.
+
+Los detalles normalizados por ID, modelo, alcance, evaluación y URL de sesión constan en [`tests/evaluacion_empirica.json`](tests/evaluacion_empirica.json). La exactitud de enlaces y la atribución de licencias deben contrastarse en cada uso real.
