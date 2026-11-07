@@ -1,7 +1,7 @@
 ---
 id: DEV-003
 titulo: "Validar despliegue preview y rutas HTTP"
-version: 1.0.0
+version: 1.1.0
 estado: probado-manualmente-no
 actualizado: 2026-11-06
 categoria: 03_desarrollo

@@ -1,7 +1,7 @@
 ---
 id: APR-002
 titulo: "Corregir ejercicios y avanzar"
-version: 1.0.0
+version: 1.1.0
 estado: probado-manualmente-no
 actualizado: 2026-11-06
 categoria: 05_aprendizaje

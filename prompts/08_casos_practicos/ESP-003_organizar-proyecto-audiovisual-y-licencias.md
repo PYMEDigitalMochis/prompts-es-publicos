@@ -1,7 +1,7 @@
 ---
 id: ESP-003
 titulo: "Organizar proyecto audiovisual y licencias"
-version: 1.0.0
+version: 1.1.0
 estado: probado-manualmente-no
 actualizado: 2026-11-06
 categoria: 08_casos_practicos

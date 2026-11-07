@@ -1,7 +1,7 @@
 ---
 id: EMP-001
 titulo: "Buscar y filtrar vacantes vigentes"
-version: 1.0.0
+version: 1.1.0
 estado: probado-manualmente-no
 actualizado: 2026-11-06
 categoria: 07_empleo

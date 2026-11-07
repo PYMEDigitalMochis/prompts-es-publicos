@@ -1,7 +1,7 @@
 ---
 id: DEV-004
 titulo: "Documentar cambio tecnico reproducible"
-version: 1.0.0
+version: 1.1.0
 estado: probado-manualmente-no
 actualizado: 2026-11-06
 categoria: 03_desarrollo

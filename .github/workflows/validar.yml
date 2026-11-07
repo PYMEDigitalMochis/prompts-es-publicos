@@ -1,0 +1,17 @@
+name: Verificar biblioteca
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validar enlaces, metadatos, 30 escenarios y seguridad básica
+        run: python -m unittest discover -s tests -p 'validar_biblioteca.py' -v

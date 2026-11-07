@@ -8,6 +8,10 @@ Selecciona una ficha en el catálogo, copia el apartado «Prompt listo para copi
 
 No supongas que la herramienta tiene navegación, acceso a archivos, permiso de escritura o capacidad de ejecutar comandos. Si carece de ellos, la instrucción debe generar un plan verificable, no fingir acciones realizadas.
 
+## Práctica con entradas de ejemplo
+
+Consulta [EJEMPLOS_DE_PRUEBA.md](EJEMPLOS_DE_PRUEBA.md) para los 30 ejemplos ficticios y [PRUEBAS_Y_LIMITACIONES.md](PRUEBAS_Y_LIMITACIONES.md) para conocer qué se comprobó y qué no.
+
 ## Añadir o revisar prompts
 
 1. Busca posibles duplicados en [CATALOGO.md](CATALOGO.md).

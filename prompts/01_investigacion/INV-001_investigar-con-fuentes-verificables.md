@@ -1,7 +1,7 @@
 ---
 id: INV-001
 titulo: "Investigar con fuentes verificables"
-version: 1.0.0
+version: 1.1.0
 estado: probado-manualmente-no
 actualizado: 2026-11-06
 categoria: 01_investigacion

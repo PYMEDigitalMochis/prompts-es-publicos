@@ -1,7 +1,7 @@
 ---
 id: ESC-001
 titulo: "Editar texto conservando la voz"
-version: 1.0.0
+version: 1.1.0
 estado: probado-manualmente-no
 actualizado: 2026-11-06
 categoria: 06_escritura

@@ -1,7 +1,7 @@
 ---
 id: PROY-002
 titulo: "Auditar estado y detectar discrepancias"
-version: 1.0.0
+version: 1.1.0
 estado: probado-manualmente-no
 actualizado: 2026-11-06
 categoria: 02_gestion_proyectos
